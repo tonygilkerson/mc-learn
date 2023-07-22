@@ -1,0 +1,5 @@
+apiVersion: tonygilkerson.com/v1
+kind: Slack
+metadata:
+  name: apps
+spec: {}

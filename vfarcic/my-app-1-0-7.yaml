@@ -1,0 +1,9 @@
+apiVersion: tonygilkerson.com/v1
+kind: App
+metadata:
+  name: my-app
+spec:
+  image: docker.io/kong/httpbin
+  port: 8080
+  host: httpd.127.0.0.1.nip.io
+  replicas: 3

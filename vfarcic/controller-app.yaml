@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-controller
+  namespace: controllers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-controller
+  template:
+    metadata:
+      labels:
+        app: app-controller
+    spec:
+      containers:
+      - name: controller
+        image: python:3
+        command: ["python3", "/hooks/app.py"]
+        volumeMounts:
+        - name: hooks
+          mountPath: /hooks
+      volumes:
+      - name: hooks
+        configMap:
+          name: app
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-controller
+  namespace: controllers
+spec:
+  selector:
+    app: app-controller
+  ports:
+  - port: 80
+

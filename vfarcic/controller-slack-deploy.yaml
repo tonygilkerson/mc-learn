@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slack-controller
+  namespace: controllers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: slack-controller
+  template:
+    metadata:
+      labels:
+        app: slack-controller
+    spec:
+      containers:
+        - name: controller
+          # image: vfarcic/metacontroller-demo:0.0.7
+          image: ttl.sh/5e0f7161-566a-4160-a187-108166d2b5ae:2h
