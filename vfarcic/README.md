@@ -12,10 +12,6 @@ Create a cluster an install Metacontroller, see root level [README](../README.md
 # Run all commands from here
 cd vfarcic
 
-# Replace `127.0.0.1` with the Ingress Service IP if not using kind
-# export export INGRESS_HOST=127.0.0.1
-# export INGRESS_HOST=httpbin.$INGRESS_HOST.nip.io
-
 # Create namespaces
 kubectl create namespace production
 kubectl create namespace controllers
@@ -27,6 +23,7 @@ Create an instance of my app
 
 ```sh
 kubectl apply -f crds.yaml
+kubectl apply -f slacks.yaml
 kubectl apply -f my-app.yaml
 ```
 

@@ -16,4 +16,7 @@ spec:
       containers:
         - name: controller
           # image: vfarcic/metacontroller-demo:0.0.7
-          image: ttl.sh/5e0f7161-566a-4160-a187-108166d2b5ae:2h
+          image: ttl.sh/cbe619c1-b17d-4c2c-ac4a-166425efd0db:2h
+          env:
+          - name: SLACK_TOKEN
+            value: TEST
