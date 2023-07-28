@@ -1,0 +1,19 @@
+{
+  "parent": {
+    "apiVersion": "tonygilkerson.com/v1",
+    "kind": "App",
+    "metadata": {
+      "name": "my-app",
+      "managedFields": [
+        {
+          "Operation": "bar"
+        }
+      ]
+    },
+    "spec": {
+      "image": "docker.io/kong/httpbin",
+      "port": 80,
+      "host": "httpbin.127.0.0.1.nip.io"
+    }
+  }
+}

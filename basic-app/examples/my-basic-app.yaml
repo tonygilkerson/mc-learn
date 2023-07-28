@@ -1,0 +1,10 @@
+apiVersion: tonygilkerson.com/v1
+kind: BasicApp
+metadata:
+  name: my-basic-app
+  namespace: production
+spec:
+  portfolio: account1
+  image: docker.io/kong/httpbin
+  port: 80
+  host: httpbin.127.0.0.1.nip.io

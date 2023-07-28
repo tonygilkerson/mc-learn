@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-app
+  namespace: controllers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic-app
+  template:
+    metadata:
+      labels:
+        app: basic-app
+    spec:
+      containers:
+        - name: controller
+          image: ttl.sh/81519e2b-362d-44d5-a09a-928297044d25:2h
