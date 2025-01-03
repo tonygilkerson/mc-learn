@@ -31,7 +31,7 @@ func main() {
 //	functions
 ///////////////////////////////////////////////////////////////////////////////
 
-// Handle basic
+// Handle sync
 func syncHandler(c *gin.Context) {
 
 	body, err := io.ReadAll(c.Request.Body)
